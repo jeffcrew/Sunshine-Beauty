@@ -1,5 +1,7 @@
 package com.jeffcrew.sunshine.web;
 
+import com.jeffcrew.sunshine.domain.Category;
+import com.jeffcrew.sunshine.service.SunshineService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,9 +16,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
-
-import com.jeffcrew.sunshine.domain.Category;
-import com.jeffcrew.sunshine.service.SunshineService;
 
 
 @ContextConfiguration(locations = { "classpath:application-context.xml", "classpath:dispatcher-servlet.xml"  })
@@ -34,7 +33,7 @@ public class CategoryControllerTest extends AbstractTransactionalJUnit4SpringCon
 
     @Before
     public void setup() {
-        this.mockMvc = MockMvcBuilders.webAppContextSetup(this.ctx).build();
+        //this.mockMvc = MockMvcBuilders.webAppContextSetup(this.ctx).build();
     }
     
     @Test

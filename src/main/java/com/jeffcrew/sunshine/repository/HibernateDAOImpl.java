@@ -1,21 +1,17 @@
 package com.jeffcrew.sunshine.repository;
 
-import java.io.Serializable;
-import java.util.List;
-
+import com.jeffcrew.sunshine.domain.Category;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.CriteriaSpecification;
 import org.hibernate.criterion.Restrictions;
 import org.hibernate.sql.JoinType;
-import org.hibernate.transform.ResultTransformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.jeffcrew.sunshine.domain.Category;
-
-import flexjson.transformer.Transformer;
+import java.io.Serializable;
+import java.util.List;
 
 
 

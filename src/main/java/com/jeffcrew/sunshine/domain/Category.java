@@ -1,18 +1,13 @@
 package com.jeffcrew.sunshine.domain;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+import org.codehaus.jackson.annotate.JsonProperty;
+
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 @Entity
 @Table(name="Category")
@@ -25,7 +20,7 @@ public class Category extends SimpleObject
 
 	public static final int ROOT_ID = 91;
 	
-	@OneToMany(mappedBy="parent",cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="parent",cascade= CascadeType.ALL)
     Set<Category> children;
 	
 	@OneToMany(mappedBy="category")

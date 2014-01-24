@@ -1,9 +1,7 @@
 package com.jeffcrew.sunshine.web;
 
-import java.util.List;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.jeffcrew.sunshine.domain.Treatment;
+import com.jeffcrew.sunshine.service.TreatmentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,10 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.jeffcrew.sunshine.domain.Category;
-import com.jeffcrew.sunshine.domain.Treatment;
-import com.jeffcrew.sunshine.service.SunshineService;
-import com.jeffcrew.sunshine.service.TreatmentService;
+import java.util.List;
 
 /**
  * Handles requests for the application home page.
@@ -28,9 +23,6 @@ public class TreatmentController {
 	@Autowired
     private TreatmentService treatmentService;
 
-	private static final Logger logger = LoggerFactory
-			.getLogger(TreatmentController.class);
-	
 	@RequestMapping(value="/", method = RequestMethod.GET)
     @ResponseBody
 	public ExtJSResponseAdapter<List<Treatment>> getTreatments() {
